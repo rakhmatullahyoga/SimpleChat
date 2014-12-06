@@ -15,14 +15,24 @@ using namespace std;
 int main() {
     User u;
     string input;
-    cout << "Masukkan command" << endl;
-    cin >> input;
-    if (input.compare("signup")==0){
-        u.Signup();
+    bool exit=false;
+    while(!exit){
+        cout << "> ";
+        cin >> input;
+        if (input.compare("signup")==0){
+            u.Signup();
+        }
+        else if(input.compare("login")==0){
+            u.Login();
+        }
+        else if(input.compare("quit")==0){
+            cout<<"Bye"<<endl;
+            exit=true;
+        }
+        else{
+            cout<<"Wrong input"<<endl;
+        }
     }
-    else if(input.compare("login")==0){
-        u.Login();
-    }   
     return 0;
 }
 

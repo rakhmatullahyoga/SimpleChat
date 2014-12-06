@@ -2,51 +2,77 @@
 using namespace std;
 
 User::User(){
-    name = " ";
-    password = " ";
+    name = "";
+    password = "";
 }
 
 User::~User()
 {
 	
 }
-
-bool User::ReadLogin()
+void User::Signup()
 {
-    string a,b;
-    ifstream myfile;
-    myfile.open ("loguser.txt");
-    while(!myfile.eof()) // To get you all the lines.
-      {
-	        getline(myfile,a); // Saves the line in a.
-                getline(myfile,b); // Saves the line in b.
-                if(name.compare(a)==0){
-                    if(password.compare(b)==0){
-                        return true;
-                    }
-                    else{return false;}
-                }
-                else{return false;}
-      }
+    cout <<"Name    :";
+    cin>>name;
+    cout <<"Password:";
+    cin>>password;
+    if(!ReadSignUp()){
+        WriteUser();
+        cout << "Signup success!" <<endl;  
+    }
+    else{
+        cout << "The account has been existed"<<endl;
+    }
     
+}
+
+void User::Login()
+{
+    cout <<"Name    :";
+    cin>>name;
+    cout <<"Password:";
+    cin>>password;
+    if(ReadLogin()){
+       cout << "Login success!" <<endl;
+    }
+    else{
+        cout << "Invalid username or password"<<endl;
+    }
 }
 
 bool User::ReadSignUp()
 {
     string a,b;
     ifstream myfile;
-    myfile.open ("loggroup.txt");
-    while(!myfile.eof()) // To get you all the lines.
-      {
-	        getline(myfile,a); // Saves the line in a.
-                getline(myfile,b); // Saves the line in b.
-                if((name.compare(a)==0)||(password.compare(b)==0)){
-                    return false;
-                }
-                else{return true;}
-      }
+    bool userfound=false;
+    myfile.open ("loguser.txt");
+    while(!myfile.eof() && !userfound) // To get you all the lines.
+    {
+	getline(myfile,a); // Saves the line in a.
+        getline(myfile,b); // Saves the line in b.
+        if(name.compare(a)==0){
+            userfound=true;
+        }
+    }
+    return userfound;
 }
 
+bool User::ReadLogin()
+{
+    string a,b;
+    ifstream myfile;
+    bool userfound=false;
+    myfile.open ("loguser.txt");
+    while(!myfile.eof() && !userfound) // To get you all the lines.
+    {
+	getline(myfile,a); // Saves the line in a.
+        getline(myfile,b); // Saves the line in b.
+        if((name.compare(a)==0)&&(password.compare(b))){
+            userfound=true;
+        }
+    }
+    return userfound;
+}
 
 bool User::ReadGroup()
 {
@@ -87,8 +113,8 @@ bool User::ReadMember()
 void User::WriteUser()
 {
     ofstream myfile;
-    myfile.open ("loguser.txt");
-    myfile << name<<endl;
+    myfile.open ("loguser.txt", ios::app);
+    myfile <<endl<< name<<endl;
     myfile << password;
     myfile.close();
 }
@@ -96,7 +122,7 @@ void User::WriteUser()
 void User::WriteGroup()
 {
     ofstream myfile;
-    myfile.open ("loggroup.txt");
+    myfile.open ("loggroup.txt", ios::app);
     myfile << group;
     myfile.close();
 }
@@ -104,39 +130,9 @@ void User::WriteGroup()
 void User::WriteMember()
 {
     ofstream myfile;
-    myfile.open ("loggroup.txt");
+    myfile.open ("loggroup.txt", ios::app);
     myfile << member;
     myfile.close();
-}
-
-bool User::Login()
-{
-    cin>>name;
-    cin>>password;
-    if(ReadLogin()){
-       cout << "Login success" <<endl;
-       return true;
-    }
-    else{
-        cout << "Invalid username or password"<<endl;
-        return false;
-    }
-}
-
-bool User::Signup()
-{
-    cin>>name;
-    cin>>password;
-    if(ReadSignUp()){
-        WriteUser();
-        cout << "Signup seccess" <<endl;  
-        return true;
-    }
-    else{
-        cout << "The account is has been existed"<<endl;
-        return false;
-    }
-    
 }
 
 void User::CreateGroup(string group)
@@ -162,7 +158,7 @@ void User::JoinGroup(string member)
         }
     }
     else{
-        cout<<member<<" has joined"<<endl;
+        cout<< member <<" has joined"<<endl;
     }
 
 }

@@ -15,15 +15,16 @@ class User{
         public :
             User();
             ~User();
-            bool ReadLogin();
+            void Signup();
+            void Login();
+            void Logout();
             bool ReadSignUp();
+            bool ReadLogin();
             bool ReadGroup();
             bool ReadMember();
             void WriteUser();
             void WriteGroup();
             void WriteMember();
-            bool Login();
-            bool Signup();
             void CreateGroup(string group);
             void JoinGroup(string member);
             void LeaveGroup(string member);
