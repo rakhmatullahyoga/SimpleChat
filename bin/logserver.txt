@@ -1,0 +1,39 @@
+[2014-12-09 11:55] Server start
+[2014-12-09 12:01] Server start
+[2014-12-09 12:01] yoga logged in
+[2014-12-09 12:02] yoga logged out
+[2014-12-09 12:02] Server shut down
+[2014-12-11 10:24] Server start
+[2014-12-11 10:24] yoga logged in
+[2014-12-11 10:26] yoga1 logged in
+[2014-12-11 10:26] Server shut down
+[2014-12-11 10:37] Server start
+[2014-12-11 10:37] yoga logged in
+[2014-12-11 10:37] yoga1 logged in
+[2014-12-11 10:38] yoga1 messages yoga
+[2014-12-11 10:38] yoga messages yoga1
+[2014-12-11 10:39] yoga logged out
+[2014-12-11 10:40] yoga1 logged out
+[2014-12-11 10:40] Server shut down
+[2014-12-11 10:45] Server start
+[2014-12-11 10:45] yoga logged in
+[2014-12-11 10:45] yoga1 logged in
+[2014-12-11 10:46] yoga1 messages yoga
+[2014-12-11 10:47] yoga1 logged out
+[2014-12-11 10:48] yoga logged out
+[2014-12-11 10:48] Server shut down
+[2014-12-11 10:51] Server start
+[2014-12-11 10:51] yoga logged in
+[2014-12-11 10:51] yoga1 logged in
+[2014-12-11 10:51] yoga1 messages yoga
+[2014-12-11 10:51] yoga messages yoga1
+[2014-12-11 10:52] yoga logged out
+[2014-12-11 10:52] yoga1 logged out
+[2014-12-11 10:52] Server shut down
+[2014-12-11 10:52] Server start
+[2014-12-11 10:53] yoga1 logged in
+[2014-12-11 10:53] yoga logged in
+[2014-12-11 10:53] yoga1 messages yoga
+[2014-12-11 10:54] yoga logged out
+[2014-12-11 10:54] yoga1 logged out
+[2014-12-11 11:06] Server shut down
