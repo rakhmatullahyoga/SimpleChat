@@ -1,39 +1,92 @@
-[2014-12-09 11:55] Server start
-[2014-12-09 12:01] Server start
-[2014-12-09 12:01] yoga logged in
-[2014-12-09 12:02] yoga logged out
-[2014-12-09 12:02] Server shut down
-[2014-12-11 10:24] Server start
-[2014-12-11 10:24] yoga logged in
-[2014-12-11 10:26] yoga1 logged in
-[2014-12-11 10:26] Server shut down
-[2014-12-11 10:37] Server start
-[2014-12-11 10:37] yoga logged in
-[2014-12-11 10:37] yoga1 logged in
-[2014-12-11 10:38] yoga1 messages yoga
-[2014-12-11 10:38] yoga messages yoga1
-[2014-12-11 10:39] yoga logged out
-[2014-12-11 10:40] yoga1 logged out
-[2014-12-11 10:40] Server shut down
-[2014-12-11 10:45] Server start
-[2014-12-11 10:45] yoga logged in
-[2014-12-11 10:45] yoga1 logged in
-[2014-12-11 10:46] yoga1 messages yoga
-[2014-12-11 10:47] yoga1 logged out
-[2014-12-11 10:48] yoga logged out
-[2014-12-11 10:48] Server shut down
-[2014-12-11 10:51] Server start
-[2014-12-11 10:51] yoga logged in
-[2014-12-11 10:51] yoga1 logged in
-[2014-12-11 10:51] yoga1 messages yoga
-[2014-12-11 10:51] yoga messages yoga1
-[2014-12-11 10:52] yoga logged out
-[2014-12-11 10:52] yoga1 logged out
-[2014-12-11 10:52] Server shut down
-[2014-12-11 10:52] Server start
-[2014-12-11 10:53] yoga1 logged in
-[2014-12-11 10:53] yoga logged in
-[2014-12-11 10:53] yoga1 messages yoga
-[2014-12-11 10:54] yoga logged out
-[2014-12-11 10:54] yoga1 logged out
-[2014-12-11 11:06] Server shut down
+[2014-12-12 22:28] Server start
+[2014-12-12 22:28] yoga logged in
+[2014-12-12 22:28] yoga1 logged in
+[2014-12-12 22:29] yoga2 logged in
+[2014-12-12 22:29] yoga2 messages yoga
+[2014-12-12 22:30] yoga messages yoga1
+[2014-12-12 22:30] yoga2 messages yoga1
+[2014-12-12 22:34] yoga logged out
+[2014-12-12 22:34] yoga1 logged out
+[2014-12-12 22:34] yoga2 logged out
+[2014-12-12 22:34] Server shut down
+[2014-12-12 22:35] Server start
+[2014-12-12 22:35] yoga logged in
+[2014-12-12 22:36] yoga1 logged in
+[2014-12-12 22:36] yoga2 logged in
+[2014-12-12 22:37] yoga messages yoga2
+[2014-12-12 22:38] yoga messages yoga1
+[2014-12-12 22:39] yoga2 messages yoga1
+[2014-12-12 22:50] yoga2 logged out
+[2014-12-12 22:50] yoga logged out
+[2014-12-12 22:50] yoga1 logged out
+[2014-12-12 22:50] Server shut down
+[2014-12-12 22:53] Server start
+[2014-12-12 22:53] yoga logged in
+[2014-12-12 22:53] yoga logged out
+[2014-12-12 22:53] yoga logged in
+[2014-12-12 22:53] yoga logged in
+[2014-12-12 22:54] yoga logged in
+[2014-12-12 22:54] yoga1 logged in
+[2014-12-12 22:54] yoga2 logged in
+[2014-12-12 22:54] yoga2 messages yoga
+[2014-12-12 23:00] Server start
+[2014-12-12 23:00] yoga logged in
+[2014-12-12 23:00] yoga1 logged in
+[2014-12-12 23:00] yoga2 logged in
+[2014-12-12 23:01] yoga2 messages yoga
+[2014-12-12 23:01] yoga2 messages yoga
+[2014-12-12 23:01] yoga messages yoga1
+[2014-12-12 23:07] yoga logged out
+[2014-12-12 23:07] yoga1 logged out
+[2014-12-12 23:07] yoga2 logged out
+[2014-12-12 23:07] Server shut down
+[2014-12-12 23:09] Server start
+[2014-12-12 23:09] yoga logged in
+[2014-12-12 23:10] yoga1 logged in
+[2014-12-12 23:10] yoga2 logged in
+[2014-12-12 23:10] yoga2 messages yoga
+[2014-12-12 23:10] yoga2 messages yoga1
+[2014-12-12 23:10] yoga messages yoga1
+[2014-12-12 23:12] yoga logged out
+[2014-12-12 23:12] yoga1 logged out
+[2014-12-12 23:12] yoga2 logged out
+[2014-12-12 23:12] Server shut down
+[2014-12-13 04:01] Server start
+[2014-12-13 04:01] yoga logged in
+[2014-12-13 04:02] yoga1 logged in
+[2014-12-13 04:05] yoga1 logged out
+[2014-12-13 04:05] yoga logged out
+[2014-12-13 04:05] Server shut down
+[2014-12-13 04:06] Server start
+[2014-12-13 04:07] yoga logged in
+[2014-12-13 04:07] yoga logged out
+[2014-12-13 04:07] yoga logged in
+[2014-12-13 04:08] yoga1 logged in
+[2014-12-13 04:09] yoga1 logged out
+[2014-12-13 04:09] yoga logged out
+[2014-12-13 04:09] Server shut down
+[2014-12-13 04:10] Server start
+[2014-12-13 04:11] yoga logged in
+[2014-12-13 04:11] yoga1 logged in
+[2014-12-13 04:27] yoga1 logged out
+[2014-12-13 04:27] yoga logged out
+[2014-12-13 04:27] Server shut down
+[2014-12-13 04:30] Server start
+[2014-12-13 04:30] yoga logged in
+[2014-12-13 04:30] yoga1 logged in
+[2014-12-13 04:31] yoga1 logged out
+[2014-12-13 04:32] yoga logged out
+[2014-12-13 04:36] Server shut down
+[2014-12-13 04:36] Server start
+[2014-12-13 04:36] yoga logged in
+[2014-12-13 04:36] yoga1 logged in
+[2014-12-13 04:37] yoga1 messages yoga
+[2014-12-13 04:37] yoga2 logged in
+[2014-12-13 04:37] yoga2 messages yoga
+[2014-12-13 04:37] yoga2 messages yoga
+[2014-12-13 04:37] yoga1 messages yoga
+[2014-12-13 04:38] yoga messages yoga2
+[2014-12-13 04:38] yoga logged out
+[2014-12-13 04:38] yoga2 logged out
+[2014-12-13 04:38] yoga1 logged out
+[2014-12-13 04:39] Server shut down

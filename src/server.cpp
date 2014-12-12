@@ -1,13 +1,11 @@
-#include <stdio.h>
+#include <cstdio>
 #include <iostream>
 #include <fstream>
-#include <stdlib.h>
-#include <string.h>
+#include <cstdlib>
+#include <cstring>
 
 #include <signal.h>
-
 #include <netdb.h>
-
 #include <sys/socket.h>
 #include <sys/types.h>
 #include <netinet/in.h>
@@ -16,6 +14,7 @@
 #include <pthread.h>
 
 #include <unistd.h>
+
 #include <ctime>
 #include <vector>
 
@@ -40,7 +39,6 @@ int thread_retval = 0;
 int sd;
 int endloop;
 char* serverlog;
-fstream myfile;
 
 User clients[MAX_CONTACTS];
 Message m;
@@ -80,6 +78,8 @@ void chat(int sd2){
 	char message[BUFF_LENGTH];
 	char inbuf[BUFF_LENGTH];
 	char outbuf[BUFF_LENGTH];
+
+	ofstream serverFile;
 	
 	while(served == 0){
 
@@ -121,18 +121,20 @@ void chat(int sd2){
 				clientname[i] = '\0';
 
 				read(sd2, inbuf, sizeof(inbuf));
+				cout << inbuf << endl;
 				strcpy(message, inbuf);
 				for(i = 0; clients[i].GetSocket() != sd2; i++);
 
 				char* name = new char[clients[i].GetName().size()+1];
 				strcpy(name, clients[i].GetName().c_str());
 
+
 				time ( &rawtime );
     			timeinfo = localtime ( &rawtime );
 				char output[30];
-    			strftime(output, 30, "[%Y-%m-%d %H:%M]", timeinfo);
+    			strftime(output, 30, "%Y-%m-%d %H:%M", timeinfo);
 				
-				sprintf(outbuf, "%s <%s> wrote: [%s]", output, name, message);
+				sprintf(outbuf, "[%s] <%s> wrote: [%s]", output, name, message);
 
 				i = 0;
 				
@@ -152,13 +154,13 @@ void chat(int sd2){
 					m.SetTime(output);
 					m.SetMessage(message);
 					m.SetStatus("pending");
-					myfile.open("logmessage.txt", ios::app);
-				    myfile << m.GetSender() << endl;
-				    myfile << m.GetReceiver() << endl;
-				    myfile << m.GetTime() << endl;
-				    myfile << m.GetMessage() << endl;
-				    myfile << m.GetStatus() << endl;
-				    myfile.close();
+					serverFile.open("logmessage.txt", ios::app);
+				    serverFile << m.GetSender() << endl;
+				    serverFile << m.GetReceiver() << endl;
+				    serverFile << m.GetTime() << endl;
+				    serverFile << m.GetMessage() << endl;
+				    serverFile << m.GetStatus() << endl;
+				    serverFile.close();
 				}
 			}
 			else if (strncmp(outbuf, "join ", 5)==0) {
@@ -206,6 +208,7 @@ void CheckPending(int sd2) {
 	int i;
 	char outbuf[BUFF_LENGTH];
 	vector<string> newSender;
+	ifstream serverFile;
 	
 	string sender;
 	string receiver;
@@ -213,14 +216,16 @@ void CheckPending(int sd2) {
 	string message;
 	string status;
 
-	myfile.open("logmessage.txt");
+	serverFile.open("logmessage.txt", ios::in);
 	for(i = 0; clients[i].GetSocket() != sd2; i++);
-	while(!myfile.eof()) {
-		getline(myfile,sender);
-		getline(myfile,receiver);
-		getline(myfile,timestamp);
-		getline(myfile,message);
-		getline(myfile,status);
+	while(!serverFile.eof()) {
+		getline(serverFile,sender);
+		if(strcmp(sender.c_str(), "")==0)
+			continue;
+		getline(serverFile,receiver);
+		getline(serverFile,timestamp);
+		getline(serverFile,message);
+		getline(serverFile,status);
 		if(strcmp(receiver.c_str(), clients[i].GetName().c_str())==0) {
 			if(strcmp(status.c_str(), "pending")==0) {
 				sprintf(outbuf, "[%s] <%s> wrote: [%s]", timestamp.c_str(), sender.c_str(), message.c_str());
@@ -228,7 +233,7 @@ void CheckPending(int sd2) {
 			}
 		}
 	}
-	myfile.close();
+	serverFile.close();
 }
 
 void *manage_connection(void *sdp) {
@@ -243,9 +248,10 @@ void *manage_connection(void *sdp) {
 		inbuf[i] = 0;
 		outbuf[i] = 0;
 	}
-	sprintf(outbuf, "END");
+	sprintf(outbuf, "START");
 	write(sd2, outbuf, sizeof(outbuf));
 
+	CheckPending(sd2);
 	chat(sd2);
 
 	tid[j] = (pthread_t)-1; /* free thread array entry */
